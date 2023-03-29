@@ -38,7 +38,7 @@ characterRoutes.route("/character/:id").get(function (req, res) {
         .collection("characters")
         .findOne(characterFromID)
         .then(
-            character => {console.log(character); res.json(character);},
+            character => {res.json(character);},
             err => {console.error(err); throw err;}
         );
 });
@@ -67,6 +67,7 @@ characterRoutes.route("/character/add").post(function (req, res) {
 
 // This route will let you update a character by id
 characterRoutes.route("/character/update/:id").post(function (req, res) {
+
     // Database object
     let db_connect = dbo.getDb();
 

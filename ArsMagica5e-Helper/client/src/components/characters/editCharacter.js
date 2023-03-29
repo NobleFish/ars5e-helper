@@ -42,7 +42,7 @@ export default function EditCharacter() {
                     navigate("/");
                 return;
             }
-
+            
             setForm(character);
         }
 
@@ -61,11 +61,11 @@ export default function EditCharacter() {
     async function onSubmit(e) {
        // Prevent default submission 
         e.preventDefault();
-        
+
         // Creates the editedCharacter object
         const editedCharacter = {
-            character_name: form.name,
-            character_type: form.position
+            character_name: form.character_name,
+            character_type: form.character_type
         };
 
         // This will send a post request to update the character in the database.
