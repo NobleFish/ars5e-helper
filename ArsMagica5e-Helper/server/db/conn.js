@@ -7,6 +7,7 @@ const Db = process.env.DB_URI
 // Setup mongo client pre-connection
 const client = new MongoClient(Db, 
 {
+    serverSelectionTimeoutMS: process.env.CONNECTION_TIMEOUT,
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -19,12 +20,15 @@ module.exports =
 {
     connectToServer: function(callback){
       
-      MongoClient.connect(Db).then(function (db) {
-        _db = db.db(process.env.DB_NAME);
-        console.log("Successfully connected to MongoDB.")
-      }).catch(function(err) {
-        return callback(err);
-      });
+        client.connect().then(
+            connection => {
+                _db = connection.db("sfj-db");
+                console.log("Successfully connected to MongoDB.")
+            },
+            err => {
+                return callback(err);
+            }
+        )
 
     },
 

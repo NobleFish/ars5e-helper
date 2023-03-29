@@ -25,7 +25,11 @@ app.listen(port, () =>
     // Database connection on server start.
     dbo.connectToServer(function (err)
     {
-        if(err){console.error(err);}
+        if(err){
+            console.error(err);
+            console.error("Could not connect to MongoDB");
+            process.exit();
+        }
     });
 
     // Server prints current port
