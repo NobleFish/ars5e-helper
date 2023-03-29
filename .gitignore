@@ -1,3 +1,6 @@
 *.lnk
 
 .vscode/spellright.dict
+
+ArsMagica5e-Helper/run-all-hermes.bat
+ArsMagica5e-Helper/run-all.bat
