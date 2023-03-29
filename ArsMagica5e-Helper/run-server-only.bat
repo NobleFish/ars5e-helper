@@ -1,2 +1,2 @@
-cd ../server
+cd server
 node server.js
