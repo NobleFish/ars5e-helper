@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Associate routes with app
-app.use(require("./routes/record"));
+app.use(require("./routes/character"));
 
 // Database Object / Driver 
 const dbo = require("./db/conn");
