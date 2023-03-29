@@ -22,7 +22,7 @@ module.exports =
       
         client.connect().then(
             connection => {
-                _db = connection.db("sfj-db");
+                _db = connection.db("ars5-db");
                 console.log("Successfully connected to MongoDB.")
             },
             err => {
