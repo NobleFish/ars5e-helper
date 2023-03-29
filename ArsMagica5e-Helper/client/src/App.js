@@ -9,8 +9,6 @@ import CharacterList from "./components/characters/listCharacters";
 import EditCharacter from "./components/characters/editCharacter";
 import CreateCharacter from "./components/characters/createCharacter";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-
 const App = () => {
  return (
    <div>
