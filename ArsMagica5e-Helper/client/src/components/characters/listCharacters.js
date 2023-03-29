@@ -10,7 +10,7 @@ const Character = (props) => (
         <td>{props.character.character_type}</td>
         <td>
             <Link className="btn btn-link" to={`/editCharacter/${props.character._id}`}>Edit</Link> |
-            <button className="btn btn-link" onClick={() => {props.deleteRecord(props.character._id);}}>
+            <button className="btn btn-link" onClick={() => {props.deleteCharacter(props.character._id);}}>
                 Delete
             </button>
         </td>
@@ -51,9 +51,9 @@ useEffect(() => {
 
 // This method will delete a character
 async function deleteCharacter(id) {
-    
+
     // Tells the server to delete the character by id
-    await fetch(`${BASE_URL}/${id}`, {
+    await fetch(`${BASE_URL}/character/${id}`, {
         method: "DELETE"
     });
 

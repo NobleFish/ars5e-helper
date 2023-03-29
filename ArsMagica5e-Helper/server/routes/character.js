@@ -28,19 +28,17 @@ characterRoutes.route("/character").get(function (req, res) {
 
 // This route will return single character by id
 characterRoutes.route("/character/:id").get(function (req, res) {
-    
     // Database object
     let db_connect = dbo.getDb();
 
     // Structure of query, _id matches id in url
     let characterFromID = { _id: new ObjectId(req.params.id) };
-
     // Connects to collection, finds match from id, returns that entry.
     db_connect
-        .collection("character")
+        .collection("characters")
         .findOne(characterFromID)
         .then(
-            character => {res.json(character)},
+            character => {console.log(character); res.json(character);},
             err => {console.error(err); throw err;}
         );
 });
@@ -94,7 +92,7 @@ characterRoutes.route("/character/update/:id").post(function (req, res) {
 });
 
 // This route uses the delete method to delete a character
-characterRoutes.route("character/:id").delete((req, response) => {
+characterRoutes.route("/character/:id").delete((req, response) => {
     // Database object
     let db_connect = dbo.getDb();
 
