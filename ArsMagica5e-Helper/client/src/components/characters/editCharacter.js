@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
+import { CharacterForm } from "./characterForm";
 
 
 const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_PORT;
@@ -51,64 +52,11 @@ export default function EditCharacter() {
         return;
     }, [params.id, navigate]);
 
-    // These methods will update the state properties.
-    function updateForm(value) {
-        return setForm((prev) => {
-            return { ...prev, ...value };
-        });
-    }
-
-    async function onSubmit(e) {
-       // Prevent default submission 
-        e.preventDefault();
-
-        // Creates the editedCharacter object
-        const editedCharacter = {
-            character_name: form.character_name,
-            character_type: form.character_type
-        };
-
-        // This will send a post request to update the character in the database.
-        await fetch(`${BASE_URL}/character/update/${params.id}`, {
-            method: "POST",
-            body: JSON.stringify(editedCharacter),
-            headers: {
-            'Content-Type': 'application/json'
-            }
-        });
-
-        navigate("/");
-    }
-
     // This following section will display the form that takes input from the user to update the data.
     return (
         <div>
             <h3>Update Record</h3>
-            <div className="form-group">
-                <label htmlFor="character_name">Character Name</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="character_name"
-                    value={form.character_name}
-                    onChange={(e) => updateForm({ character_name: e.target.value })}
-                />
-            </div>
-            <div className="form-group">
-                <label htmlFor="character_type">Character Type</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="character_type"
-                    value={form.character_type}
-                    onChange={(e) => updateForm({ character_type: e.target.value })}
-                />
-            </div>
-            <form onSubmit={onSubmit}>
-                <div className="form-group">
-                    <input type="submit" value="Update Record" className="btn btn-primary"/>
-                </div>
-            </form>
+            <CharacterForm queryType={"edit"} existingCharacter={form} existingID={params.id.toString()} />
         </div>
     );
 }
