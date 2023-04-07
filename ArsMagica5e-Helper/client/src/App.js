@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 // We import all the components we need in our app
 import Navbar from "./components/navbar";
 import CharacterList from "./components/characters/listCharacters";
-import CharacterForm from "./components/characters/characterForm";
+import {CharacterForm} from "./components/characters/characterForm";
 
 const App = () => {
  return (
@@ -14,6 +14,7 @@ const App = () => {
      <Navbar />
      <Routes>
        <Route exact path="/" element={<CharacterList />} />
+       <Route path="/characters" element={<CharacterList />}/>
        <Route path="/editCharacter/:id" element={<CharacterForm queryType={"edit"} />} />
        <Route path="/createCharacter" element={<CharacterForm queryType={"add"} />} />
      </Routes>
