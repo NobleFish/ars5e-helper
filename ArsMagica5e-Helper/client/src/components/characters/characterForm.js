@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router";
 
 const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_PORT;
-const NAVIGATE_TO = "/";
+const NAVIGATE_TO = "/characters";
 
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
 export function CharacterForm({queryType, eXxistingID}){
