@@ -8,6 +8,9 @@ import Navbar from "./components/navbar";
 import CharacterList from "./components/characters/listCharacters";
 import {CharacterForm} from "./components/characters/characterForm";
 
+import CovenantList from "./components/covenants/listCovenants";
+import {CovenantForm} from "./components/covenants/covenantForm";
+
 const App = () => {
  return (
    <div>
@@ -17,6 +20,9 @@ const App = () => {
        <Route path="/characters" element={<CharacterList />}/>
        <Route path="/editCharacter/:id" element={<CharacterForm queryType={"edit"} />} />
        <Route path="/createCharacter" element={<CharacterForm queryType={"add"} />} />
+       <Route path="/covenants" element={<CovenantList />}/>
+       <Route path="/editCovenant/:id" element={<CovenantForm queryType={"edit"} />} />
+       <Route path="/createCovenant" element={<CovenantForm queryType={"add"} />} />
      </Routes>
    </div>
  );

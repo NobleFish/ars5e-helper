@@ -15,6 +15,7 @@ app.use(express.json());
 
 // Associate routes with app
 app.use(require("./routes/character"));
+app.use(require("./routes/covenant"));
 
 // Database Object / Driver 
 const dbo = require("./db/conn");
