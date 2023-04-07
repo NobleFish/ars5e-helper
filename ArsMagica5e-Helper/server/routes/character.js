@@ -10,7 +10,7 @@ const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
 
 // This route will return an array of all the characters in the collection.
-characterRoutes.route("/character").get(function (req, res) {
+characterRoutes.route("/character/").get(function (req, res) {
     
     // Database object
     let db_connect = dbo.getDb();

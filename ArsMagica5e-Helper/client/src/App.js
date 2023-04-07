@@ -8,6 +8,7 @@ import Navbar from "./components/navbar";
 import CharacterList from "./components/characters/listCharacters";
 import EditCharacter from "./components/characters/editCharacter";
 import CreateCharacter from "./components/characters/createCharacter";
+import { CharacterForm } from "./components/characters/characterForm";
 
 const App = () => {
  return (
@@ -15,8 +16,8 @@ const App = () => {
      <Navbar />
      <Routes>
        <Route exact path="/" element={<CharacterList />} />
-       <Route path="/editCharacter/:id" element={<EditCharacter />} />
-       <Route path="/createCharacter" element={<CreateCharacter />} />
+       <Route path="/editCharacter/:id" element={<CharacterForm queryType={"edit"} />} />
+       <Route path="/createCharacter" element={<CharacterForm queryType={"add"} />} />
      </Routes>
    </div>
  );
