@@ -6,9 +6,7 @@ import { Route, Routes } from "react-router-dom";
 // We import all the components we need in our app
 import Navbar from "./components/navbar";
 import CharacterList from "./components/characters/listCharacters";
-import EditCharacter from "./components/characters/editCharacter";
-import CreateCharacter from "./components/characters/createCharacter";
-import { CharacterForm } from "./components/characters/characterForm";
+import CharacterForm from "./components/characters/characterForm";
 
 const App = () => {
  return (
