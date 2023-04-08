@@ -2,19 +2,19 @@ import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router";
 
 const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_PORT;
-const NAVIGATE_TO = "/characters";
+const NAVIGATE_TO = "/covenants";
 
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
-export function CharacterForm({queryType, eXxistingID}){
+export function CovenantForm({queryType, eXxistingID}){
 
-    // An empty character
-    const BLANK_CHARACTER = {
-        character_name: "",
-        character_type: ""
+    // An empty covenant
+    const BLANK_COVENANT = {
+        covenant_name: "",
+        covenant_type: ""
     };
 
     // Form state object
-    const [form, setForm] = useState(BLANK_CHARACTER);
+    const [form, setForm] = useState(BLANK_COVENANT);
     const [existingID,setExistingID] = useState("");
 
     const navigate = useNavigate();
@@ -26,15 +26,15 @@ export function CharacterForm({queryType, eXxistingID}){
 
             setExistingID(params.id.toString());
 
-            // This fetches character data on page enter
+            // This fetches covenant data on page enter
             if(existingID === ""){
                 return;
             }
 
             async function fetchData() {
                 
-                // Request character response from server
-                const response = await fetch(`${BASE_URL}/character/${existingID}`);
+                // Request covenant response from server
+                const response = await fetch(`${BASE_URL}/covenant/${existingID}`);
     
                 // If server does not respond
                 if (!response.ok) {
@@ -43,14 +43,14 @@ export function CharacterForm({queryType, eXxistingID}){
                     return;
                 }
     
-                const character = await response.json();
-                    if (!character) {
-                        window.alert(`Character with id ${existingID} not found`);
+                const covenant = await response.json();
+                    if (!covenant) {
+                        window.alert(`Covenant with id ${existingID} not found`);
                         navigate(NAVIGATE_TO);
                     return;
                 }
 
-                setForm(character);
+                setForm(covenant);
             }
     
             fetchData();
@@ -65,17 +65,17 @@ export function CharacterForm({queryType, eXxistingID}){
         // Prevent default submission 
         e.preventDefault();
 
-        const newCharacter = { ...form };
+        const newCovenant = { ...form };
 
         if(queryType === "add"){
-            // Forming the post request with the newCharacter info
-            await fetch(`${BASE_URL}/character/add`, {
+            // Forming the post request with the newCovenant info
+            await fetch(`${BASE_URL}/covenant/add`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
             
-                body: JSON.stringify(newCharacter),
+                body: JSON.stringify(newCovenant),
             })
             .catch(error => {
                 window.alert(error);
@@ -85,10 +85,10 @@ export function CharacterForm({queryType, eXxistingID}){
 
         if(queryType === "edit"){
             
-            // This will send a post request to update the character in the database.
-            await fetch(`${BASE_URL}/character/update/${existingID}`, {
+            // This will send a post request to update the covenant in the database.
+            await fetch(`${BASE_URL}/covenant/update/${existingID}`, {
                 method: "POST",
-                body: JSON.stringify(newCharacter),
+                body: JSON.stringify(newCovenant),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -100,7 +100,7 @@ export function CharacterForm({queryType, eXxistingID}){
         }
         
         // Clears form data
-        setForm(BLANK_CHARACTER);
+        setForm(BLANK_COVENANT);
 
         // Navigate to main page
         navigate(NAVIGATE_TO);
@@ -116,30 +116,30 @@ export function CharacterForm({queryType, eXxistingID}){
     return(
         <div>
             {queryType === "add" && 
-                <h3>Create New Character</h3>
+                <h3>Create New Covenant</h3>
             }
             {queryType === "edit" && 
-                <h3>Update Character</h3>
+                <h3>Update Covenant</h3>
             }
             <form onSubmit={onSubmit}>
                 <div className="form-group">
-                    <label htmlFor="character_name">Character Name</label>
+                    <label htmlFor="covenant_name">Covenant Name</label>
                     <input
                         type="text"
                         className="form-control"
-                        id="character_name"
-                        value={form.character_name}
-                        onChange={(e) => updateForm({ character_name: e.target.value })}
+                        id="covenant_name"
+                        value={form.covenant_name}
+                        onChange={(e) => updateForm({ covenant_name: e.target.value })}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="character_type">Character Type</label>
+                    <label htmlFor="covenant_type">Covenant Type</label>
                     <input
                         type="text"
                         className="form-control"
-                        id="character_type"
-                        value={form.character_type}
-                        onChange={(e) => updateForm({ character_type: e.target.value })}
+                        id="covenant_type"
+                        value={form.covenant_type}
+                        onChange={(e) => updateForm({ covenant_type: e.target.value })}
                     />
                 </div>
                 <div className="form-group">

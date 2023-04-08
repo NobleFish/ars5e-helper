@@ -6,9 +6,10 @@ import { Route, Routes } from "react-router-dom";
 // We import all the components we need in our app
 import Navbar from "./components/navbar";
 import CharacterList from "./components/characters/listCharacters";
-import EditCharacter from "./components/characters/editCharacter";
-import CreateCharacter from "./components/characters/createCharacter";
-import { CharacterForm } from "./components/characters/characterForm";
+import {CharacterForm} from "./components/characters/characterForm";
+
+import CovenantList from "./components/covenants/listCovenants";
+import {CovenantForm} from "./components/covenants/covenantForm";
 
 const App = () => {
  return (
@@ -16,8 +17,12 @@ const App = () => {
      <Navbar />
      <Routes>
        <Route exact path="/" element={<CharacterList />} />
+       <Route path="/characters" element={<CharacterList />}/>
        <Route path="/editCharacter/:id" element={<CharacterForm queryType={"edit"} />} />
        <Route path="/createCharacter" element={<CharacterForm queryType={"add"} />} />
+       <Route path="/covenants" element={<CovenantList />}/>
+       <Route path="/editCovenant/:id" element={<CovenantForm queryType={"edit"} />} />
+       <Route path="/createCovenant" element={<CovenantForm queryType={"add"} />} />
      </Routes>
    </div>
  );

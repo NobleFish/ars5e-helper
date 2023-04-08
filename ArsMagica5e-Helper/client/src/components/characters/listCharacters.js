@@ -82,6 +82,7 @@ function characterList() {
 return (
     <div>
         <h3>Character List</h3>
+        <Link className="btn btn-link" to={`/createCharacter/`}>Add Character</Link>
         <table className="table table-striped" style={{ marginTop: 20 }}>
             <thead>
                 <tr>
