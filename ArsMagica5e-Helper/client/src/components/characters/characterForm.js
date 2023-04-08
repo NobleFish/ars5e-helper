@@ -7,10 +7,84 @@ const NAVIGATE_TO = "/characters";
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
 export function CharacterForm({queryType}){
 
+    const BLANK_ABILITY = {
+    };
+
+    const BLANK_VIRTUE = {
+    };
+
+    const BLANK_FLAW = {
+
+    };
+
     // An empty character
     const BLANK_CHARACTER = {
+        // Mage, Companion or Grog
+        character_type:"",
+
+        // Clerical Info
         character_name: "",
-        character_type: ""
+        player_name: "",
+        saga:"",
+        setting:"",
+
+        // Mages only?
+        house:"",
+        
+        // Can calculate birth year
+        year:"",
+        age:"",
+
+        // There is a default for players, range from -5 to +5 , -3 to +3
+        size:"",
+        // There is a default for players...
+        confidence:"",
+
+        // Both dec and warp have array of effects and a score
+        decreptitude:{
+            score:0,
+            effects:[]
+        },
+        warping:{
+            score:0,
+            effects:[]
+        },
+
+        // Character Extras
+        birth_name:"",
+        year_born:"",
+        gender:"",
+        ethnicity:"",
+        place_of_origin:"",
+        religion:"",
+        title_profession:"",
+        height:"",
+        weight:"",
+        hair:"",
+        eyes:"",
+        handedness:"",
+
+        // Characteristics
+        // Range from -5 to +5 (-3 to +3)
+        intelligence:0,
+        perception:0,
+        strength:0,
+        stamina:0,
+        presence:0,
+        communication:0,
+        dexterity:0,
+        quickness:0,
+
+        // Virtues & Flaws
+        // Array of virtue & flaw objects
+        virtures:[],
+        flaws:[],
+
+        // Abilities 
+        // Ability array contains ability objects with exp, ability, specialty & score
+        abilities:[]
+
+        
     };
 
     // Form state object
