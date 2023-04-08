@@ -5,7 +5,7 @@ const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_P
 const NAVIGATE_TO = "/characters";
 
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
-export function CharacterForm({queryType, eXxistingID}){
+export function CharacterForm({queryType}){
 
     // An empty character
     const BLANK_CHARACTER = {

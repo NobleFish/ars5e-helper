@@ -5,7 +5,7 @@ const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_P
 const NAVIGATE_TO = "/covenants";
 
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
-export function CovenantForm({queryType, eXxistingID}){
+export function CovenantForm({queryType}){
 
     // An empty covenant
     const BLANK_COVENANT = {
