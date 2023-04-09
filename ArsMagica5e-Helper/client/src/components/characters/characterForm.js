@@ -10,6 +10,10 @@ const characterData = require("../../local_data/test.json")
 export function CharacterForm({queryType}){
 
     const BLANK_ABILITY = {
+        name:"",
+        experience:0,
+        score:0,
+        specialty:""
     };
 
     const BLANK_VIRTUE = {
