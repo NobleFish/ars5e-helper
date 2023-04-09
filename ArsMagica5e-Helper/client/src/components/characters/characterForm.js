@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router";
 const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_PORT;
 const NAVIGATE_TO = "/characters";
 
+const characterData = require("../../local_data/test.json")
+
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
 export function CharacterForm({queryType}){
 
@@ -95,7 +97,8 @@ export function CharacterForm({queryType}){
     const params = useParams();
     
     useEffect(() => {
-        
+        console.log(characterData);
+
         if(queryType === "edit"){
 
             setExistingID(params.id.toString());
