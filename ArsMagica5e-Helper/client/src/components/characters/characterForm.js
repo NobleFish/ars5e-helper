@@ -5,7 +5,7 @@ import "../component_data/templates.js";
 const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_PORT;
 const NAVIGATE_TO = "/characters";
 
-const characterData = require("../../local_data/test.json")
+//const characterData = require("../../local_data/test.json")
 
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
 export function CharacterForm({queryType}){

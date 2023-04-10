@@ -15,13 +15,13 @@ const BLANK_FLAW = {
 const BLANK_PERSONALITY_TRAIT = {
     trait:"",
     score:""
-}
+};
 
 const BLANK_REPUTATION = {
     reputation:"",
     type:"",
     score:0
-}
+};
 
 const BLANK_WEAPON = {
     // Qik + Weap - Enc
@@ -35,7 +35,27 @@ const BLANK_WEAPON = {
 
     load:"",
     range:""
-}
+};
+
+const BLANK_RAW_VIS = {
+    art:"",
+    pawns:0,
+    physical_form:""
+};
+
+const BLANK_SPELL = {
+    name:"",
+    form:"",
+    technique:"",
+    level:0,
+    bonus:0,
+    range:"",
+    duration:"",
+    target:"",
+    experience:0,
+    mastery:"",
+    notes:""
+};
 
 // An empty character
 const BLANK_CHARACTER = {
@@ -219,6 +239,57 @@ const BLANK_CHARACTER = {
             experience:0,
             score:0
         }
-    }
+    },
+
+    // Qik + Finesse (+stress die)
+    fast_casting_speed:0,  
+    // Per + Awareness (+die vs 15-magnitude)
+    determining_effect:0,
+    // Per + Finesse (+die)
+    base_targeting:0,
+    // Sta + Concentration (+die)
+    concentration:0,
+    // Parma * 5 (+form)
+    magic_resistance:0,
+    // Int + Finesse (+stress die - no. of spells, vs 9)
+    multiple_casting:0,
+
+    // LAB
+    // Int + Theory + Aura (+Technique+Form)
+    basic_lab_total:0,
+
+    // Longevity Ritual
+    longevity_ritual:{
+        lab_total:0,
+        age_roll_modifier:0,
+        twilight_scars:[]
+    },
+    
+    raw_vis:[],
+
+    familiar:{
+        int_cun:0,
+        per:0,
+        str:0,
+        sta:0,
+        pre:0,
+        com:0,
+        dex:0,
+        qik:0,
+        size:0,
+        might:0,
+        soak:0,
+        fat:0,
+        init:0,
+        atk:0,
+        dfn:0,
+        dam:0,
+        bronze_cord:"",
+        silver_cord:"",
+        gold_cord:"",
+        bond_qualities:[]
+    },
+
+    spells:[]
 
 };
