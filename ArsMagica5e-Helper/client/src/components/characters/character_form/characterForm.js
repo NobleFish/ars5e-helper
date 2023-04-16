@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router";
-import "../component_data/templates.js";
+import "../../component_data/templates.js";
 
 const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_PORT;
 const NAVIGATE_TO = "/characters";
