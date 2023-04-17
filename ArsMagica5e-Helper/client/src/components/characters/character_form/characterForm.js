@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router";
-import "../../component_data/templates.js";
+import * as templates from "../../component_data/templates.js";
 
 const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_PORT;
 const NAVIGATE_TO = "/characters";
 
-//const characterData = require("../../local_data/test.json")
+const BLANK_CHARACTER = templates.BLANK_CHARACTER;
 
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
 export function CharacterForm({queryType}){
@@ -18,8 +18,7 @@ export function CharacterForm({queryType}){
     const params = useParams();
     
     useEffect(() => {
-        console.log(characterData);
-
+        
         if(queryType === "edit"){
 
             setExistingID(params.id.toString());

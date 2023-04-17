@@ -8,8 +8,8 @@ import Navbar from "./components/navbar";
 
 import HomePage from "./components/home";
 
-import CharacterList from "./components/characters/listCharacters";
-import {CharacterForm} from "./components/characters/characterForm";
+import CharacterList from "./components/characters/character_form/listCharacters";
+import {CharacterForm} from "./components/characters/character_form/characterForm";
 
 import CovenantList from "./components/covenants/listCovenants";
 import {CovenantForm} from "./components/covenants/covenantForm";
