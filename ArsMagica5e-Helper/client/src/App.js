@@ -14,6 +14,8 @@ import {CharacterForm} from "./components/characters/character_form/characterFor
 import CovenantList from "./components/covenants/listCovenants";
 import {CovenantForm} from "./components/covenants/covenantForm";
 
+import { PrintCharacter } from "./components/characters/print/printCharacter";
+
 const App = () => {
  return (
    <div>
@@ -26,6 +28,7 @@ const App = () => {
        <Route path="/covenants" element={<CovenantList />}/>
        <Route path="/editCovenant/:id" element={<CovenantForm queryType={"edit"} />} />
        <Route path="/createCovenant" element={<CovenantForm queryType={"add"} />} />
+       <Route path="/print/character" element={<PrintCharacter />} />
      </Routes>
    </div>
  );
