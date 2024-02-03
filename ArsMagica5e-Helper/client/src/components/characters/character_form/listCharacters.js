@@ -12,7 +12,9 @@ const Character = (props) => (
             <Link className="btn btn-link" to={`/editCharacter/${props.character._id}`}>Edit</Link> |
             <button className="btn btn-link" onClick={() => {props.deleteCharacter(props.character._id);}}>
                 Delete
-            </button>
+            </button> | 
+            <Link className="btn btn-link" to={`/print/character/${props.character._id}`}>Generate PDF</Link>
+           
         </td>
     </tr>
 );
