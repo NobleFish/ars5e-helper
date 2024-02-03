@@ -1,3 +1,4 @@
+/* Styles for the navbar */
 .navbar {
     background: linear-gradient(360deg, rgb(32, 18, 7) 0%, rgb(32, 18, 7) 100%);
     height: 80px;
@@ -8,36 +9,35 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    /* Added this */
-    padding: 0 !important; 
-  }
-  
-  .navbar-container {
+    padding: 0 !important; /* Avoid default padding */
+}
+
+/* Styles for the navbar container */
+.navbar-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80px;
     max-width: 1500px;
-    /* Added these two */
     padding: 8px 0;
-    /* This centers the content of the navbar-container */
-     margin: 0 auto; 
-  }
-  
-  /* Set the height of the image to the height of the navbar */
-  .img {
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+/* Styles for the image in the navbar */
+.img {
     height: 70px;
     border-radius: 8px;
-    margin-left: 0.5rem;
-    margin-left: 20px;
-  }
-  
-  .fa-image {
+    margin-left: 20px; /* Fixing duplicate margin property */
+}
+
+/* Styles for font awesome image icon */
+.fa-image {
     margin-left: 0.5rem;
     font-size: 1.8rem;
-  }
-  
-  .nav-menu {
+}
+
+/* Styles for the navigation menu */
+.nav-menu {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
@@ -46,122 +46,126 @@
     width: 60vw;
     justify-content: end;
     margin-right: 2rem;
-    /* Added this so everything centers properly */
-    margin-bottom: 0;
-  }
-  
-  .nav-item {
+    margin-bottom: 0; /* Avoid extra margin */
+}
+
+/* Styles for each navigation item */
+.nav-item {
     height: 80px;
-  }
-  
-  .nav-links {
+}
+
+/* Styles for navigation links */
+.nav-links {
     color: #a8a4a4;
     display: flex;
     align-items: center;
     text-decoration: none;
     padding: 0.5rem 1rem;
     height: 100%;
-  }
-  
-  .nav-links:hover {
+}
+
+/* Hover styles for navigation links */
+.nav-links:hover {
     border-bottom: 4px solid #a39c9c;
     transition: all 0.2s ease-out;
-  }
-  
-  .fa-bars {
+}
+
+/* Styles for font awesome bars icon */
+.fa-bars {
     color: #fff;
-  }
-  
-  .fa-x {
+}
+
+/* Styles for font awesome x icon */
+.fa-x {
     color: #fff;
-  }
-  
-  .nav-links-mobile {
+}
+
+/* Styles for mobile navigation links and menu icon */
+.nav-links-mobile,
+.menu-icon {
     display: none;
-  }
-  
-  .menu-icon {
-    display: none;
-  }
-  
-  @media screen and (max-width: 960px) {
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 960px) {
+    /* Additional styles for smaller screens */
     .NavbarItems {
-      position: relative;
+        position: relative;
     }
-  
+
     .nav-menu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 90vh;
-      position: absolute;
-      top: 80px;
-      left: -100%;
-      opacity: 1;
-      transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
     }
-  
+
     .nav-menu.active {
-      background: #242424;
-      left: 0;
-      opacity: 1;
-      transition: all 0.5s ease;
-      z-index: 1;
+        background: #242424;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
     }
-  
+
     .nav-links {
-      text-align: center;
-      padding: 2rem;
-      width: 100%;
-      display: table;
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
     }
-  
+
     .nav-links:hover {
-      background-color: #fff;
-      color: #242424;
-      border-radius: 0;
+        background-color: #fff;
+        color: #242424;
+        border-radius: 0;
     }
-  
+
     .navbar-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 50%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(25%, 50%);
     }
-  
+
     .menu-icon {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
-      font-size: 1.8rem;
-      cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
     }
-  
+
     .fa-times {
-      color: #fff;
-      font-size: 2rem;
+        color: #fff;
+        font-size: 2rem;
     }
-  
+
     .nav-links-mobile {
-      display: block;
-      text-align: center;
-      margin: 2rem auto;
-      border-radius: 4px;
-      width: 80%;
-      text-decoration: none;
-      font-size: 1.5rem;
-      background-color: transparent;
-      color: #fff;
-      padding: 14px 20px;
-      border: 1px solid #fff;
-      transition: all 0.3s ease-out;
+        display: block;
+        text-align: center;
+        margin: 2rem auto;
+        border-radius: 4px;
+        width: 80%;
+        text-decoration: none;
+        font-size: 1.5rem;
+        background-color: transparent;
+        color: #fff;
+        padding: 14px 20px;
+        border: 1px solid #fff;
+        transition: all 0.3s ease-out;
     }
-  
+
     .nav-links-mobile:hover {
-      background: #fff;
-      color: #242424;
-      transition: 250ms;
+        background: #fff;
+        color: #242424;
+        transition: 250ms;
     }
-  }
+}

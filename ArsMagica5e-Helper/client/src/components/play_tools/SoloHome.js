@@ -7,3 +7,5 @@ export function SoloHome(){
         </div>
     )
 }
+
+export default SoloHome;

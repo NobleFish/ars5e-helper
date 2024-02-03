@@ -1,9 +1,13 @@
-export function NotFound(){
+import React from 'react';
+
+export function PageNotFound(){
     return(
         <div>
             <center>
-                <b>404 Magic Not Found</b>
+                <h1>404 - Mage Not Found</h1>
             </center>
         </div>
     )
 }
+
+export default PageNotFound;
