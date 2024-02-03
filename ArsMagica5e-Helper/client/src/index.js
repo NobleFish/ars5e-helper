@@ -10,6 +10,7 @@ const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 
 root.render(
+    // Strict mode causes things to run twice
     <React.StrictMode>
         <BrowserRouter>
             <App />

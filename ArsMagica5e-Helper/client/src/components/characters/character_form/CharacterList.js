@@ -68,7 +68,7 @@ const CharacterList = () => {
 
     // Call the getCharacters function
     getCharacters();
-  }, [characters.length]);
+  }, []);
 
   // Function to delete a character
   const deleteCharacter = async (id) => {
