@@ -1,0 +1,27 @@
+/* Set global styles for the entire application */
+body {
+    background-color: #93948E;
+  }
+  
+  /* Center the content in the App component */
+  .App {
+    text-align: center;
+  }
+  
+  /* Apply a background color and styling to the header */
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  /* Styling for hyperlinks within the application */
+  .App-link {
+    color: #61dafb;
+  }
+  

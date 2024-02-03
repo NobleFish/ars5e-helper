@@ -1,0 +1,53 @@
+{
+    "grogs":[
+        {
+            "template_name": "The Berserker",
+            "characteristics":{
+                "intelligence":-2,
+                "perception":-1,
+                "presence":-1,
+                "communication":-1,
+                "strength":3,
+                "stamina":2,
+                "dexterity":2,
+                "quickness":1
+            },
+            "size":1,
+            "age":15,
+            "age_apparent":15,
+            "decrepitude":0,
+            "warping_score":0,
+            "warping_excess":0,
+            "virtues":[
+                "Covenfolk",
+                "Berserk",
+                "Large"
+            ],
+            "flaws":[
+                "Short Attention Span",
+                "Wrathful (Minor)"
+            ],
+            "personality_traits":[
+                {
+                    "trait":"Angry",
+                    "score":3
+                },
+                {
+                    "trait":"Brave",
+                    "score":3
+                },
+                {
+                    "trait":"Loyal",
+                    "score":1
+                },
+                {
+                    "trait":"Obedient",
+                    "score":-2
+                }
+            ],
+            "reputations":[]
+            
+
+        }
+    ]
+}
