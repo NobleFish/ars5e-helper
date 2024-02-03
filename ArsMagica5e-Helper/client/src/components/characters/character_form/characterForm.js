@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router";
-import * as templates from "../../component_data/templates.js";
+import BLANK_CHARACTER from "../../component_data/templates.js";
+
 
 const BASE_URL = process.env.REACT_APP_SERVER_URL+process.env.REACT_APP_SERVER_PORT;
 const NAVIGATE_TO = "/characters";
 
-const BLANK_CHARACTER = templates.BLANK_CHARACTER;
 
 // Query Types can be "add" or "edit", if "edit", include mongo ObjectID as string
 export function CharacterForm({queryType}){
@@ -55,7 +55,7 @@ export function CharacterForm({queryType}){
             return;
         };
         
-    },[queryType,existingID])
+    },[queryType, existingID, params.id, navigate])
 
     // Update
     async function onSubmit(e) {

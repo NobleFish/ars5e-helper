@@ -69,7 +69,7 @@ const BLANK_CHARACTER = {
     setting:"",
 
     // Covenant (Pull from other list)
-    covenant:"",
+    //covenant:"",
     
     // Can calculate birth year
     year:"",
@@ -293,3 +293,5 @@ const BLANK_CHARACTER = {
     spells:[]
 
 };
+export default BLANK_CHARACTER;
+
